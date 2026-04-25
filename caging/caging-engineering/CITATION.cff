@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Caging Engineering: A Reachability-Oriented Framework for Reliable AI Agent Systems"
+message: "If you use this framework, please cite this repository."
+type: software
+authors:
+  - family-names: Zhang
+    given-names: Oliver
+version: 0.1.0
+date-released: 2026-04-25
+repository-code: "https://github.com/YOUR_USERNAME/caging-engineering"
+license: "CC-BY-NC-4.0"
+abstract: "Caging Engineering is a reachability-oriented framework for reliable AI agent systems. It designs task spaces where goals remain reachable, unsafe states become unreachable, knowledge and memory are controlled, verification is externalized, and invalid paths are pruned after success."
+keywords:
+  - AI agents
+  - reachability
+  - agent architecture
+  - verification
+  - memory middleware
+  - caging engineering
