@@ -1,0 +1,5556 @@
+{
+  "generated": "2026-10-26",
+  "abstraction": "t1 v1",
+  "preregistration_tag": "prereg-frozen-2026-10-26",
+  "states": [
+    "no/no/in_dir",
+    "no/no/elsewhere",
+    "no/yes/in_dir",
+    "no/yes/elsewhere",
+    "partial/no/in_dir",
+    "partial/no/elsewhere",
+    "partial/yes/in_dir",
+    "partial/yes/elsewhere",
+    "yes/no/in_dir",
+    "yes/no/elsewhere",
+    "yes/yes/in_dir",
+    "yes/yes/elsewhere"
+  ],
+  "s0": "no/no/in_dir",
+  "goals": {
+    "G": [
+      "yes/no/elsewhere",
+      "yes/no/in_dir",
+      "yes/yes/elsewhere",
+      "yes/yes/in_dir"
+    ],
+    "tests_run": [
+      "no/yes/elsewhere",
+      "no/yes/in_dir",
+      "partial/yes/elsewhere",
+      "partial/yes/in_dir",
+      "yes/yes/elsewhere",
+      "yes/yes/in_dir"
+    ]
+  },
+  "library": {
+    "K1": {
+      "description": "writes only via the write_file tool (no shell redirection or heredocs)",
+      "max_steps": null
+    },
+    "K2": {
+      "description": "no write_file tool; writes only via shell",
+      "max_steps": null
+    },
+    "K3": {
+      "description": "tests only via run_tests (shell pytest blocked)",
+      "max_steps": null
+    },
+    "K4": {
+      "description": "no run_tests tool; tests only via shell",
+      "max_steps": null
+    },
+    "K5": {
+      "description": "at most 12 tool calls (path bound)",
+      "max_steps": 12
+    },
+    "K6": {
+      "description": "visible tests read-only and writes confined to the exercise directory (= L3)",
+      "max_steps": null
+    }
+  },
+  "n_combinations": 41,
+  "unreachable": {
+    "G": [
+      "K1∧K2",
+      "K1∧K2∧K3",
+      "K1∧K2∧K4",
+      "K1∧K2∧K5",
+      "K1∧K2∧K6"
+    ],
+    "tests_run": [
+      "K3∧K4",
+      "K1∧K3∧K4",
+      "K2∧K3∧K4",
+      "K3∧K4∧K5",
+      "K3∧K4∧K6"
+    ]
+  },
+  "combinations": [
+    {
+      "cages": [
+        "K1"
+      ],
+      "name": "K1",
+      "size": 1,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K2"
+      ],
+      "name": "K2",
+      "size": 1,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "shell_write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K3"
+      ],
+      "name": "K3",
+      "size": 1,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K4"
+      ],
+      "name": "K4",
+      "size": 1,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "shell_tests",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K5"
+      ],
+      "name": "K5",
+      "size": 1,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K6"
+      ],
+      "name": "K6",
+      "size": 1,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K2"
+      ],
+      "name": "K1∧K2",
+      "size": 2,
+      "max_steps": null,
+      "G": "UNREACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": null,
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": [
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_nontest_in_dir",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_nontest_in_dir",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_nontest_in_dir",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_nontest_in_dir",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_nontest_in_dir",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_test",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_outside",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_nontest_in_dir",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_test",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_outside",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_nontest_in_dir",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_test",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_outside",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_nontest_in_dir",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_test",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_outside",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          }
+        ],
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K3"
+      ],
+      "name": "K1∧K3",
+      "size": 2,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K4"
+      ],
+      "name": "K1∧K4",
+      "size": 2,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "shell_tests",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K5"
+      ],
+      "name": "K1∧K5",
+      "size": 2,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K6"
+      ],
+      "name": "K1∧K6",
+      "size": 2,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K2",
+        "K3"
+      ],
+      "name": "K2∧K3",
+      "size": 2,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "shell_write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K2",
+        "K4"
+      ],
+      "name": "K2∧K4",
+      "size": 2,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "shell_write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "shell_tests",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K2",
+        "K5"
+      ],
+      "name": "K2∧K5",
+      "size": 2,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "shell_write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K2",
+        "K6"
+      ],
+      "name": "K2∧K6",
+      "size": 2,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "shell_write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K3",
+        "K4"
+      ],
+      "name": "K3∧K4",
+      "size": 2,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "UNREACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": null
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": [
+          {
+            "edge": [
+              "no/no/in_dir",
+              "run_tests_tool",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_tests",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "run_tests_tool",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_tests",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "run_tests_tool",
+              "partial/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_tests",
+              "partial/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "run_tests_tool",
+              "partial/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_tests",
+              "partial/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "run_tests_tool",
+              "yes/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_tests",
+              "yes/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "run_tests_tool",
+              "yes/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_tests",
+              "yes/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          }
+        ]
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K3",
+        "K5"
+      ],
+      "name": "K3∧K5",
+      "size": 2,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K3",
+        "K6"
+      ],
+      "name": "K3∧K6",
+      "size": 2,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K4",
+        "K5"
+      ],
+      "name": "K4∧K5",
+      "size": 2,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "shell_tests",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K4",
+        "K6"
+      ],
+      "name": "K4∧K6",
+      "size": 2,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "shell_tests",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K5",
+        "K6"
+      ],
+      "name": "K5∧K6",
+      "size": 2,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K2",
+        "K3"
+      ],
+      "name": "K1∧K2∧K3",
+      "size": 3,
+      "max_steps": null,
+      "G": "UNREACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": null,
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": [
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_tests",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_nontest_in_dir",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_nontest_in_dir",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_tests",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_nontest_in_dir",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_nontest_in_dir",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_tests",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_nontest_in_dir",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_test",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_outside",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_nontest_in_dir",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_test",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_outside",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_tests",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_nontest_in_dir",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_test",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_outside",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_nontest_in_dir",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_test",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_outside",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          }
+        ],
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K2",
+        "K4"
+      ],
+      "name": "K1∧K2∧K4",
+      "size": 3,
+      "max_steps": null,
+      "G": "UNREACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": null,
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "shell_tests",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": [
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "run_tests_tool",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_nontest_in_dir",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_nontest_in_dir",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "run_tests_tool",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_nontest_in_dir",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_nontest_in_dir",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "run_tests_tool",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_nontest_in_dir",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_test",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_outside",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_nontest_in_dir",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_test",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_outside",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "run_tests_tool",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_nontest_in_dir",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_test",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_outside",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_nontest_in_dir",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_test",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_outside",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          }
+        ],
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K2",
+        "K5"
+      ],
+      "name": "K1∧K2∧K5",
+      "size": 3,
+      "max_steps": 12,
+      "G": "UNREACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": null,
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": [
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_nontest_in_dir",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_nontest_in_dir",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_nontest_in_dir",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_nontest_in_dir",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_nontest_in_dir",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_test",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_outside",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_nontest_in_dir",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_test",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_outside",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_nontest_in_dir",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_test",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_outside",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_nontest_in_dir",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_test",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_outside",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          }
+        ],
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K2",
+        "K6"
+      ],
+      "name": "K1∧K2∧K6",
+      "size": 3,
+      "max_steps": null,
+      "G": "UNREACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": null,
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": [
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_nontest_in_dir",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_destructive",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_network",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_nontest_in_dir",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_nontest_in_dir",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_destructive",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_network",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_nontest_in_dir",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_nontest_in_dir",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_test",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "write_outside",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K2",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_destructive",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_network",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_nontest_in_dir",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_test",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/in_dir",
+              "shell_write_outside",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K1",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_nontest_in_dir",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_test",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "write_outside",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K2",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_destructive",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_network",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_nontest_in_dir",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_test",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1",
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/yes/elsewhere",
+              "shell_write_outside",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K1",
+              "K6"
+            ]
+          }
+        ],
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K3",
+        "K4"
+      ],
+      "name": "K1∧K3∧K4",
+      "size": 3,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "UNREACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": null
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": [
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "run_tests_tool",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_tests",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_nontest_in_dir",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "run_tests_tool",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_tests",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_nontest_in_dir",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "run_tests_tool",
+              "partial/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_tests",
+              "partial/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_write_nontest_in_dir",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_write_test",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_write_outside",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "run_tests_tool",
+              "partial/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_tests",
+              "partial/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_write_nontest_in_dir",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_write_test",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_write_outside",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "run_tests_tool",
+              "yes/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_tests",
+              "yes/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_write_nontest_in_dir",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_write_test",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_write_outside",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "run_tests_tool",
+              "yes/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_tests",
+              "yes/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_write_nontest_in_dir",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_write_test",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_write_outside",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K1"
+            ]
+          }
+        ]
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K3",
+        "K5"
+      ],
+      "name": "K1∧K3∧K5",
+      "size": 3,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K3",
+        "K6"
+      ],
+      "name": "K1∧K3∧K6",
+      "size": 3,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K4",
+        "K5"
+      ],
+      "name": "K1∧K4∧K5",
+      "size": 3,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "shell_tests",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K4",
+        "K6"
+      ],
+      "name": "K1∧K4∧K6",
+      "size": 3,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "shell_tests",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K1",
+        "K5",
+        "K6"
+      ],
+      "name": "K1∧K5∧K6",
+      "size": 3,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K2",
+        "K3",
+        "K4"
+      ],
+      "name": "K2∧K3∧K4",
+      "size": 3,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "UNREACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "shell_write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": null
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": [
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "run_tests_tool",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_tests",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_nontest_in_dir",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "run_tests_tool",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_tests",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_nontest_in_dir",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "run_tests_tool",
+              "partial/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_tests",
+              "partial/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "write_nontest_in_dir",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "write_test",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "write_outside",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "run_tests_tool",
+              "partial/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_tests",
+              "partial/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "write_nontest_in_dir",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "write_test",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "write_outside",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "write_stub",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "write_stub",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "run_tests_tool",
+              "yes/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_tests",
+              "yes/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "write_nontest_in_dir",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "write_test",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "write_outside",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "write_stub",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "write_stub",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "run_tests_tool",
+              "yes/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_tests",
+              "yes/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "write_nontest_in_dir",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "write_test",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "write_outside",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K2"
+            ]
+          }
+        ]
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K2",
+        "K3",
+        "K5"
+      ],
+      "name": "K2∧K3∧K5",
+      "size": 3,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "shell_write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K2",
+        "K3",
+        "K6"
+      ],
+      "name": "K2∧K3∧K6",
+      "size": 3,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "shell_write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K2",
+        "K4",
+        "K5"
+      ],
+      "name": "K2∧K4∧K5",
+      "size": 3,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "shell_write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "shell_tests",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K2",
+        "K4",
+        "K6"
+      ],
+      "name": "K2∧K4∧K6",
+      "size": 3,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "shell_write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "shell_tests",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K2",
+        "K5",
+        "K6"
+      ],
+      "name": "K2∧K5∧K6",
+      "size": 3,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "shell_write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K3",
+        "K4",
+        "K5"
+      ],
+      "name": "K3∧K4∧K5",
+      "size": 3,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "UNREACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": null
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": [
+          {
+            "edge": [
+              "no/no/in_dir",
+              "run_tests_tool",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_tests",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "run_tests_tool",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_tests",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "run_tests_tool",
+              "partial/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_tests",
+              "partial/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "run_tests_tool",
+              "partial/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_tests",
+              "partial/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "run_tests_tool",
+              "yes/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_tests",
+              "yes/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "run_tests_tool",
+              "yes/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_tests",
+              "yes/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          }
+        ]
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K3",
+        "K4",
+        "K6"
+      ],
+      "name": "K3∧K4∧K6",
+      "size": 3,
+      "max_steps": null,
+      "G": "REACHABLE",
+      "tests_run": "UNREACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": null
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": [
+          {
+            "edge": [
+              "no/no/in_dir",
+              "run_tests_tool",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_tests",
+              "no/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_destructive",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_network",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_test",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/in_dir",
+              "shell_write_outside",
+              "no/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "run_tests_tool",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_tests",
+              "no/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_destructive",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_network",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_test",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "no/no/elsewhere",
+              "shell_write_outside",
+              "no/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "run_tests_tool",
+              "partial/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_tests",
+              "partial/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "write_test",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "write_outside",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_destructive",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_network",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_write_test",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/in_dir",
+              "shell_write_outside",
+              "partial/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "run_tests_tool",
+              "partial/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_tests",
+              "partial/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "write_test",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "write_outside",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_destructive",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_network",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_write_test",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "partial/no/elsewhere",
+              "shell_write_outside",
+              "partial/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "run_tests_tool",
+              "yes/yes/in_dir"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_tests",
+              "yes/yes/in_dir"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "write_test",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "write_outside",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_destructive",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_network",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_write_test",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/in_dir",
+              "shell_write_outside",
+              "yes/no/in_dir"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "run_tests_tool",
+              "yes/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K4"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_tests",
+              "yes/yes/elsewhere"
+            ],
+            "cut_by": [
+              "K3"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "write_test",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "write_outside",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_destructive",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_network",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_write_test",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          },
+          {
+            "edge": [
+              "yes/no/elsewhere",
+              "shell_write_outside",
+              "yes/no/elsewhere"
+            ],
+            "cut_by": [
+              "K6"
+            ]
+          }
+        ]
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K3",
+        "K5",
+        "K6"
+      ],
+      "name": "K3∧K5∧K6",
+      "size": 3,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "run_tests_tool",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    },
+    {
+      "cages": [
+        "K4",
+        "K5",
+        "K6"
+      ],
+      "name": "K4∧K5∧K6",
+      "size": 3,
+      "max_steps": 12,
+      "G": "REACHABLE",
+      "tests_run": "REACHABLE",
+      "witness": {
+        "G": [
+          [
+            "no/no/in_dir",
+            "write_stub",
+            "yes/no/in_dir"
+          ]
+        ],
+        "tests_run": [
+          [
+            "no/no/in_dir",
+            "shell_tests",
+            "no/yes/in_dir"
+          ]
+        ]
+      },
+      "frontier": {
+        "G": null,
+        "tests_run": null
+      },
+      "reachable": [
+        "no/no/elsewhere",
+        "no/no/in_dir",
+        "no/yes/elsewhere",
+        "no/yes/in_dir",
+        "partial/no/elsewhere",
+        "partial/no/in_dir",
+        "partial/yes/elsewhere",
+        "partial/yes/in_dir",
+        "yes/no/elsewhere",
+        "yes/no/in_dir",
+        "yes/yes/elsewhere",
+        "yes/yes/in_dir"
+      ]
+    }
+  ]
+}
