@@ -63,6 +63,9 @@ def plan(manifest: dict[str, Any], hypothesis: str, seeds: list[int], model_labe
 
     if hypothesis == "h1":
         exercises = require(manifest, "admitted_exercises")
+        if only is not None:
+            # Smoke runs may name the manifest's smoke-test exercises, which are never admitted.
+            exercises = sorted(set(exercises) | (set(manifest.get("smoke_test_exercises", [])) & only))
         return [[PlannedEpisode(f"h1-{lvl}-{ex}-s{seed}", ex, lvl, seed)]
                 for lvl in LADDER for ex in exercises if ok(ex) for seed in seeds]
     if hypothesis == "h3":

@@ -58,3 +58,11 @@ def test_null_field_is_reported(tmp_path, capsys):
     assert "h4_orders" in capsys.readouterr().err
     assert main(["--hypothesis", "h1", "--out", str(tmp_path / "o"), "--manifest", str(p), "--dry-run"]) == 0
     assert "total" in capsys.readouterr().out
+
+
+def test_h1_only_may_name_smoke_exercises():
+    from harness.runner import plan
+    m = manifest()
+    m["smoke_test_exercises"] = ["leap", "bob"]
+    seqs = plan(m, "h1", [1], "primary", {"leap"})
+    assert len(seqs) == 7 and all(seq[0].exercise == "leap" for seq in seqs)
