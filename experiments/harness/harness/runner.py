@@ -103,6 +103,8 @@ class Runner:
     def __init__(self, a: argparse.Namespace) -> None:
         self.a = a
         self.manifest_path = Path(a.manifest)
+        # Smoke runs (--exercises) never touch the manifest's failure ledger.
+        self.ledger_failures = a.exercises is None
         self.manifest = json.loads(self.manifest_path.read_text(encoding="utf-8"))
         self.out = Path(a.out)
         self.lock = threading.Lock()
@@ -133,6 +135,8 @@ class Runner:
     def record_failure(self, spec: EpisodeSpec, error: str) -> None:
         rec = failed_record(spec, error, self.out)
         self.record(rec)
+        if not self.ledger_failures:
+            return
         with self.lock:
             m = json.loads(self.manifest_path.read_text(encoding="utf-8"))
             m.setdefault("harness_failures", []).append(

@@ -1,6 +1,6 @@
 """OpenAI-compatible chat completions with tool calls (DESIGN.md "llm.py").
 
-Reads CE_LLM_BASE_URL, CE_LLM_MODEL, CE_LLM_API_KEY from the environment; none of them is
+Reads CE_LLM_BASE_URL (including the /v1 prefix, as the OpenAI SDK expects), CE_LLM_MODEL, CE_LLM_API_KEY from the environment; none of them is
 ever written to disk. Sends `tools`, `tool_choice="auto"`, `temperature`, `top_p`, `seed`.
 Counts `usage.completion_tokens` when the server returns it; otherwise estimates
 len(text)/4 and marks the response `tokens_estimated=True`. 5xx responses, timeouts and
@@ -109,7 +109,7 @@ class LLMClient:
         last: str = ""
         for attempt in range(RETRIES + 1):
             try:
-                r = self._client.post("/v1/chat/completions", json=body)
+                r = self._client.post(f"{self.cfg.base_url}/chat/completions", json=body)
             except (httpx.TimeoutException, httpx.TransportError) as e:
                 last = f"{type(e).__name__}: {e}"
             else:
