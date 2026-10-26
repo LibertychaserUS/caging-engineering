@@ -45,11 +45,2253 @@
     "raindrops",
     "bob"
   ],
-  "exclusion_list": null,
-  "admitted_exercises": null,
-  "h3_subset_80": null,
-  "h3_subset_40": null,
-  "h4_orders": null,
+  "exclusion_list": [],
+  "admitted_exercises": [
+    "accumulate",
+    "acronym",
+    "affine-cipher",
+    "all-your-base",
+    "allergies",
+    "alphametics",
+    "anagram",
+    "armstrong-numbers",
+    "atbash-cipher",
+    "bank-account",
+    "beer-song",
+    "binary",
+    "binary-search",
+    "binary-search-tree",
+    "book-store",
+    "bottle-song",
+    "bowling",
+    "camicia",
+    "change",
+    "circular-buffer",
+    "clock",
+    "collatz-conjecture",
+    "complex-numbers",
+    "connect",
+    "crypto-square",
+    "custom-set",
+    "darts",
+    "diamond",
+    "difference-of-squares",
+    "diffie-hellman",
+    "dnd-character",
+    "dominoes",
+    "dot-dsl",
+    "eliuds-eggs",
+    "error-handling",
+    "etl",
+    "flatten-array",
+    "flower-field",
+    "food-chain",
+    "forth",
+    "game-of-life",
+    "gigasecond",
+    "go-counting",
+    "grade-school",
+    "grains",
+    "grep",
+    "hamming",
+    "hangman",
+    "hexadecimal",
+    "high-scores",
+    "house",
+    "isbn-verifier",
+    "isogram",
+    "killer-sudoku-helper",
+    "kindergarten-garden",
+    "knapsack",
+    "largest-series-product",
+    "ledger",
+    "line-up",
+    "linked-list",
+    "list-ops",
+    "luhn",
+    "markdown",
+    "matching-brackets",
+    "matrix",
+    "meetup",
+    "minesweeper",
+    "nth-prime",
+    "nucleotide-count",
+    "ocr-numbers",
+    "octal",
+    "paasio",
+    "palindrome-products",
+    "pangram",
+    "parallel-letter-frequency",
+    "pascals-triangle",
+    "perfect-numbers",
+    "phone-number",
+    "pig-latin",
+    "point-mutations",
+    "poker",
+    "pov",
+    "prime-factors",
+    "protein-translation",
+    "proverb",
+    "pythagorean-triplet",
+    "queen-attack",
+    "rail-fence-cipher",
+    "rational-numbers",
+    "react",
+    "rectangles",
+    "relative-distance",
+    "resistor-color",
+    "resistor-color-duo",
+    "resistor-color-expert",
+    "resistor-color-trio",
+    "rest-api",
+    "reverse-string",
+    "rna-transcription",
+    "robot-name",
+    "robot-simulator",
+    "roman-numerals",
+    "rotational-cipher",
+    "run-length-encoding",
+    "saddle-points",
+    "satellite",
+    "say",
+    "scale-generator",
+    "scrabble-score",
+    "secret-handshake",
+    "series",
+    "sgf-parsing",
+    "sieve",
+    "simple-cipher",
+    "simple-linked-list",
+    "space-age",
+    "spiral-matrix",
+    "square-root",
+    "state-of-tic-tac-toe",
+    "strain",
+    "sublist",
+    "sum-of-multiples",
+    "swift-scheduling",
+    "tournament",
+    "transpose",
+    "tree-building",
+    "triangle",
+    "trinary",
+    "twelve-days",
+    "two-bucket",
+    "variable-length-quantity",
+    "word-count",
+    "word-search",
+    "wordy",
+    "yacht",
+    "zebra-puzzle",
+    "zipper"
+  ],
+  "h3_subset_80": [
+    "acronym",
+    "affine-cipher",
+    "all-your-base",
+    "anagram",
+    "armstrong-numbers",
+    "atbash-cipher",
+    "beer-song",
+    "book-store",
+    "bowling",
+    "camicia",
+    "change",
+    "circular-buffer",
+    "complex-numbers",
+    "crypto-square",
+    "custom-set",
+    "darts",
+    "diamond",
+    "difference-of-squares",
+    "diffie-hellman",
+    "dnd-character",
+    "error-handling",
+    "flatten-array",
+    "forth",
+    "gigasecond",
+    "grade-school",
+    "hangman",
+    "high-scores",
+    "house",
+    "isogram",
+    "kindergarten-garden",
+    "knapsack",
+    "ledger",
+    "line-up",
+    "linked-list",
+    "list-ops",
+    "luhn",
+    "matching-brackets",
+    "matrix",
+    "minesweeper",
+    "nth-prime",
+    "octal",
+    "paasio",
+    "palindrome-products",
+    "parallel-letter-frequency",
+    "perfect-numbers",
+    "phone-number",
+    "point-mutations",
+    "pov",
+    "prime-factors",
+    "protein-translation",
+    "proverb",
+    "rail-fence-cipher",
+    "rational-numbers",
+    "react",
+    "rectangles",
+    "relative-distance",
+    "resistor-color-duo",
+    "resistor-color-expert",
+    "resistor-color-trio",
+    "rest-api",
+    "reverse-string",
+    "rna-transcription",
+    "robot-name",
+    "rotational-cipher",
+    "run-length-encoding",
+    "scale-generator",
+    "series",
+    "sieve",
+    "simple-cipher",
+    "simple-linked-list",
+    "spiral-matrix",
+    "state-of-tic-tac-toe",
+    "sublist",
+    "sum-of-multiples",
+    "transpose",
+    "triangle",
+    "trinary",
+    "word-search",
+    "wordy",
+    "yacht"
+  ],
+  "h3_subset_40": [
+    "acronym",
+    "affine-cipher",
+    "all-your-base",
+    "anagram",
+    "atbash-cipher",
+    "book-store",
+    "change",
+    "circular-buffer",
+    "complex-numbers",
+    "crypto-square",
+    "forth",
+    "hangman",
+    "isogram",
+    "ledger",
+    "line-up",
+    "list-ops",
+    "luhn",
+    "matching-brackets",
+    "matrix",
+    "minesweeper",
+    "octal",
+    "paasio",
+    "phone-number",
+    "pov",
+    "protein-translation",
+    "proverb",
+    "rail-fence-cipher",
+    "rational-numbers",
+    "react",
+    "resistor-color-duo",
+    "resistor-color-expert",
+    "rest-api",
+    "rna-transcription",
+    "robot-name",
+    "simple-linked-list",
+    "state-of-tic-tac-toe",
+    "sum-of-multiples",
+    "transpose",
+    "word-search",
+    "wordy"
+  ],
+  "h4_orders": [
+    [
+      "pangram",
+      "poker",
+      "tree-building",
+      "sgf-parsing",
+      "grains",
+      "resistor-color",
+      "phone-number",
+      "reverse-string",
+      "space-age",
+      "secret-handshake",
+      "transpose",
+      "kindergarten-garden",
+      "swift-scheduling",
+      "minesweeper",
+      "ledger",
+      "rest-api",
+      "beer-song",
+      "simple-linked-list",
+      "camicia",
+      "game-of-life",
+      "go-counting",
+      "bank-account",
+      "rail-fence-cipher",
+      "allergies",
+      "luhn",
+      "rna-transcription",
+      "saddle-points",
+      "hangman",
+      "relative-distance",
+      "say",
+      "grep",
+      "crypto-square",
+      "forth",
+      "food-chain",
+      "resistor-color-trio",
+      "paasio",
+      "eliuds-eggs",
+      "tournament",
+      "two-bucket",
+      "run-length-encoding"
+    ],
+    [
+      "game-of-life",
+      "rectangles",
+      "rail-fence-cipher",
+      "robot-simulator",
+      "satellite",
+      "square-root",
+      "high-scores",
+      "resistor-color-duo",
+      "scrabble-score",
+      "prime-factors",
+      "secret-handshake",
+      "resistor-color-expert",
+      "change",
+      "pythagorean-triplet",
+      "palindrome-products",
+      "sieve",
+      "food-chain",
+      "line-up",
+      "beer-song",
+      "diamond",
+      "simple-cipher",
+      "robot-name",
+      "variable-length-quantity",
+      "pascals-triangle",
+      "grains",
+      "nucleotide-count",
+      "rotational-cipher",
+      "killer-sudoku-helper",
+      "transpose",
+      "say",
+      "strain",
+      "dot-dsl",
+      "point-mutations",
+      "ledger",
+      "hamming",
+      "crypto-square",
+      "proverb",
+      "rational-numbers",
+      "trinary",
+      "parallel-letter-frequency"
+    ],
+    [
+      "satellite",
+      "largest-series-product",
+      "high-scores",
+      "game-of-life",
+      "paasio",
+      "relative-distance",
+      "dot-dsl",
+      "eliuds-eggs",
+      "queen-attack",
+      "saddle-points",
+      "point-mutations",
+      "luhn",
+      "resistor-color",
+      "nth-prime",
+      "simple-linked-list",
+      "palindrome-products",
+      "rotational-cipher",
+      "space-age",
+      "flower-field",
+      "simple-cipher",
+      "isogram",
+      "secret-handshake",
+      "scale-generator",
+      "binary-search",
+      "pascals-triangle",
+      "nucleotide-count",
+      "run-length-encoding",
+      "rail-fence-cipher",
+      "binary",
+      "ocr-numbers",
+      "tournament",
+      "robot-simulator",
+      "sieve",
+      "transpose",
+      "food-chain",
+      "book-store",
+      "list-ops",
+      "react",
+      "rest-api",
+      "ledger"
+    ]
+  ],
   "harness_failures": [],
-  "notes": "null fields are filled, before any agent run, by experiments/harness/make_manifest.py using draw_seed; each fill is a separate commit."
+  "notes": "Filled by experiments/harness/make_manifest.py from draw_seed. H4 orders are three independent draws of 40 admitted exercises without replacement within an order.",
+  "exercise_files": {
+    "accumulate": {
+      "solution": [
+        "accumulate.py"
+      ],
+      "test": [
+        "accumulate_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "acronym": {
+      "solution": [
+        "acronym.py"
+      ],
+      "test": [
+        "acronym_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "affine-cipher": {
+      "solution": [
+        "affine_cipher.py"
+      ],
+      "test": [
+        "affine_cipher_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "all-your-base": {
+      "solution": [
+        "all_your_base.py"
+      ],
+      "test": [
+        "all_your_base_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "allergies": {
+      "solution": [
+        "allergies.py"
+      ],
+      "test": [
+        "allergies_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "alphametics": {
+      "solution": [
+        "alphametics.py"
+      ],
+      "test": [
+        "alphametics_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "anagram": {
+      "solution": [
+        "anagram.py"
+      ],
+      "test": [
+        "anagram_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "armstrong-numbers": {
+      "solution": [
+        "armstrong_numbers.py"
+      ],
+      "test": [
+        "armstrong_numbers_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "atbash-cipher": {
+      "solution": [
+        "atbash_cipher.py"
+      ],
+      "test": [
+        "atbash_cipher_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "bank-account": {
+      "solution": [
+        "bank_account.py"
+      ],
+      "test": [
+        "bank_account_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "beer-song": {
+      "solution": [
+        "beer_song.py"
+      ],
+      "test": [
+        "beer_song_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "binary": {
+      "solution": [
+        "binary.py"
+      ],
+      "test": [
+        "binary_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "binary-search": {
+      "solution": [
+        "binary_search.py"
+      ],
+      "test": [
+        "binary_search_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "binary-search-tree": {
+      "solution": [
+        "binary_search_tree.py"
+      ],
+      "test": [
+        "binary_search_tree_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "bob": {
+      "solution": [
+        "bob.py"
+      ],
+      "test": [
+        "bob_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "book-store": {
+      "solution": [
+        "book_store.py"
+      ],
+      "test": [
+        "book_store_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "bottle-song": {
+      "solution": [
+        "bottle_song.py"
+      ],
+      "test": [
+        "bottle_song_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "bowling": {
+      "solution": [
+        "bowling.py"
+      ],
+      "test": [
+        "bowling_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "camicia": {
+      "solution": [
+        "camicia.py"
+      ],
+      "test": [
+        "camicia_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "change": {
+      "solution": [
+        "change.py"
+      ],
+      "test": [
+        "change_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "circular-buffer": {
+      "solution": [
+        "circular_buffer.py"
+      ],
+      "test": [
+        "circular_buffer_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "clock": {
+      "solution": [
+        "clock.py"
+      ],
+      "test": [
+        "clock_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "collatz-conjecture": {
+      "solution": [
+        "collatz_conjecture.py"
+      ],
+      "test": [
+        "collatz_conjecture_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "complex-numbers": {
+      "solution": [
+        "complex_numbers.py"
+      ],
+      "test": [
+        "complex_numbers_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "connect": {
+      "solution": [
+        "connect.py"
+      ],
+      "test": [
+        "connect_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "crypto-square": {
+      "solution": [
+        "crypto_square.py"
+      ],
+      "test": [
+        "crypto_square_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "custom-set": {
+      "solution": [
+        "custom_set.py"
+      ],
+      "test": [
+        "custom_set_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "darts": {
+      "solution": [
+        "darts.py"
+      ],
+      "test": [
+        "darts_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "diamond": {
+      "solution": [
+        "diamond.py"
+      ],
+      "test": [
+        "diamond_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "difference-of-squares": {
+      "solution": [
+        "difference_of_squares.py"
+      ],
+      "test": [
+        "difference_of_squares_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "diffie-hellman": {
+      "solution": [
+        "diffie_hellman.py"
+      ],
+      "test": [
+        "diffie_hellman_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "dnd-character": {
+      "solution": [
+        "dnd_character.py"
+      ],
+      "test": [
+        "dnd_character_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "dominoes": {
+      "solution": [
+        "dominoes.py"
+      ],
+      "test": [
+        "dominoes_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "dot-dsl": {
+      "solution": [
+        "dot_dsl.py"
+      ],
+      "test": [
+        "dot_dsl_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "eliuds-eggs": {
+      "solution": [
+        "eliuds_eggs.py"
+      ],
+      "test": [
+        "eliuds_eggs_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "error-handling": {
+      "solution": [
+        "error_handling.py"
+      ],
+      "test": [
+        "error_handling_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": [
+        "test_utils.py"
+      ]
+    },
+    "etl": {
+      "solution": [
+        "etl.py"
+      ],
+      "test": [
+        "etl_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "flatten-array": {
+      "solution": [
+        "flatten_array.py"
+      ],
+      "test": [
+        "flatten_array_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "flower-field": {
+      "solution": [
+        "flower_field.py"
+      ],
+      "test": [
+        "flower_field_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "food-chain": {
+      "solution": [
+        "food_chain.py"
+      ],
+      "test": [
+        "food_chain_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "forth": {
+      "solution": [
+        "forth.py"
+      ],
+      "test": [
+        "forth_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "game-of-life": {
+      "solution": [
+        "game_of_life.py"
+      ],
+      "test": [
+        "game_of_life_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "gigasecond": {
+      "solution": [
+        "gigasecond.py"
+      ],
+      "test": [
+        "gigasecond_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "go-counting": {
+      "solution": [
+        "go_counting.py"
+      ],
+      "test": [
+        "go_counting_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "grade-school": {
+      "solution": [
+        "grade_school.py"
+      ],
+      "test": [
+        "grade_school_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "grains": {
+      "solution": [
+        "grains.py"
+      ],
+      "test": [
+        "grains_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "grep": {
+      "solution": [
+        "grep.py"
+      ],
+      "test": [
+        "grep_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "hamming": {
+      "solution": [
+        "hamming.py"
+      ],
+      "test": [
+        "hamming_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "hangman": {
+      "solution": [
+        "hangman.py"
+      ],
+      "test": [
+        "hangman_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "hello-world": {
+      "solution": [
+        "hello_world.py"
+      ],
+      "test": [
+        "hello_world_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "hexadecimal": {
+      "solution": [
+        "hexadecimal.py"
+      ],
+      "test": [
+        "hexadecimal_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "high-scores": {
+      "solution": [
+        "high_scores.py"
+      ],
+      "test": [
+        "high_scores_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "house": {
+      "solution": [
+        "house.py"
+      ],
+      "test": [
+        "house_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "isbn-verifier": {
+      "solution": [
+        "isbn_verifier.py"
+      ],
+      "test": [
+        "isbn_verifier_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "isogram": {
+      "solution": [
+        "isogram.py"
+      ],
+      "test": [
+        "isogram_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "killer-sudoku-helper": {
+      "solution": [
+        "killer_sudoku_helper.py"
+      ],
+      "test": [
+        "killer_sudoku_helper_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "kindergarten-garden": {
+      "solution": [
+        "kindergarten_garden.py"
+      ],
+      "test": [
+        "kindergarten_garden_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "knapsack": {
+      "solution": [
+        "knapsack.py"
+      ],
+      "test": [
+        "knapsack_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "largest-series-product": {
+      "solution": [
+        "largest_series_product.py"
+      ],
+      "test": [
+        "largest_series_product_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "leap": {
+      "solution": [
+        "leap.py"
+      ],
+      "test": [
+        "leap_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "ledger": {
+      "solution": [
+        "ledger.py"
+      ],
+      "test": [
+        "ledger_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "line-up": {
+      "solution": [
+        "line_up.py"
+      ],
+      "test": [
+        "line_up_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "linked-list": {
+      "solution": [
+        "linked_list.py"
+      ],
+      "test": [
+        "linked_list_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "list-ops": {
+      "solution": [
+        "list_ops.py"
+      ],
+      "test": [
+        "list_ops_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "luhn": {
+      "solution": [
+        "luhn.py"
+      ],
+      "test": [
+        "luhn_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "markdown": {
+      "solution": [
+        "markdown.py"
+      ],
+      "test": [
+        "markdown_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "matching-brackets": {
+      "solution": [
+        "matching_brackets.py"
+      ],
+      "test": [
+        "matching_brackets_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "matrix": {
+      "solution": [
+        "matrix.py"
+      ],
+      "test": [
+        "matrix_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "meetup": {
+      "solution": [
+        "meetup.py"
+      ],
+      "test": [
+        "meetup_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "minesweeper": {
+      "solution": [
+        "minesweeper.py"
+      ],
+      "test": [
+        "minesweeper_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "nth-prime": {
+      "solution": [
+        "nth_prime.py"
+      ],
+      "test": [
+        "nth_prime_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "nucleotide-count": {
+      "solution": [
+        "nucleotide_count.py"
+      ],
+      "test": [
+        "nucleotide_count_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "ocr-numbers": {
+      "solution": [
+        "ocr_numbers.py"
+      ],
+      "test": [
+        "ocr_numbers_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "octal": {
+      "solution": [
+        "octal.py"
+      ],
+      "test": [
+        "octal_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "paasio": {
+      "solution": [
+        "paasio.py"
+      ],
+      "test": [
+        "paasio_test.py",
+        "test_utils.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "palindrome-products": {
+      "solution": [
+        "palindrome_products.py"
+      ],
+      "test": [
+        "palindrome_products_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "pangram": {
+      "solution": [
+        "pangram.py"
+      ],
+      "test": [
+        "pangram_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "parallel-letter-frequency": {
+      "solution": [
+        "parallel_letter_frequency.py"
+      ],
+      "test": [
+        "parallel_letter_frequency_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "pascals-triangle": {
+      "solution": [
+        "pascals_triangle.py"
+      ],
+      "test": [
+        "pascals_triangle_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "perfect-numbers": {
+      "solution": [
+        "perfect_numbers.py"
+      ],
+      "test": [
+        "perfect_numbers_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "phone-number": {
+      "solution": [
+        "phone_number.py"
+      ],
+      "test": [
+        "phone_number_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "pig-latin": {
+      "solution": [
+        "pig_latin.py"
+      ],
+      "test": [
+        "pig_latin_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "point-mutations": {
+      "solution": [
+        "point_mutations.py"
+      ],
+      "test": [
+        "point_mutations_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "poker": {
+      "solution": [
+        "poker.py"
+      ],
+      "test": [
+        "poker_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "pov": {
+      "solution": [
+        "pov.py"
+      ],
+      "test": [
+        "pov_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "prime-factors": {
+      "solution": [
+        "prime_factors.py"
+      ],
+      "test": [
+        "prime_factors_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "protein-translation": {
+      "solution": [
+        "protein_translation.py"
+      ],
+      "test": [
+        "protein_translation_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "proverb": {
+      "solution": [
+        "proverb.py"
+      ],
+      "test": [
+        "proverb_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "pythagorean-triplet": {
+      "solution": [
+        "pythagorean_triplet.py"
+      ],
+      "test": [
+        "pythagorean_triplet_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "queen-attack": {
+      "solution": [
+        "queen_attack.py"
+      ],
+      "test": [
+        "queen_attack_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "rail-fence-cipher": {
+      "solution": [
+        "rail_fence_cipher.py"
+      ],
+      "test": [
+        "rail_fence_cipher_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "raindrops": {
+      "solution": [
+        "raindrops.py"
+      ],
+      "test": [
+        "raindrops_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "rational-numbers": {
+      "solution": [
+        "rational_numbers.py"
+      ],
+      "test": [
+        "rational_numbers_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "react": {
+      "solution": [
+        "react.py"
+      ],
+      "test": [
+        "react_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "rectangles": {
+      "solution": [
+        "rectangles.py"
+      ],
+      "test": [
+        "rectangles_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "relative-distance": {
+      "solution": [
+        "relative_distance.py"
+      ],
+      "test": [
+        "relative_distance_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "resistor-color": {
+      "solution": [
+        "resistor_color.py"
+      ],
+      "test": [
+        "resistor_color_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "resistor-color-duo": {
+      "solution": [
+        "resistor_color_duo.py"
+      ],
+      "test": [
+        "resistor_color_duo_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "resistor-color-expert": {
+      "solution": [
+        "resistor_color_expert.py"
+      ],
+      "test": [
+        "resistor_color_expert_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "resistor-color-trio": {
+      "solution": [
+        "resistor_color_trio.py"
+      ],
+      "test": [
+        "resistor_color_trio_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "rest-api": {
+      "solution": [
+        "rest_api.py"
+      ],
+      "test": [
+        "rest_api_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "reverse-string": {
+      "solution": [
+        "reverse_string.py"
+      ],
+      "test": [
+        "reverse_string_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "rna-transcription": {
+      "solution": [
+        "rna_transcription.py"
+      ],
+      "test": [
+        "rna_transcription_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "robot-name": {
+      "solution": [
+        "robot_name.py"
+      ],
+      "test": [
+        "robot_name_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "robot-simulator": {
+      "solution": [
+        "robot_simulator.py"
+      ],
+      "test": [
+        "robot_simulator_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "roman-numerals": {
+      "solution": [
+        "roman_numerals.py"
+      ],
+      "test": [
+        "roman_numerals_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "rotational-cipher": {
+      "solution": [
+        "rotational_cipher.py"
+      ],
+      "test": [
+        "rotational_cipher_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "run-length-encoding": {
+      "solution": [
+        "run_length_encoding.py"
+      ],
+      "test": [
+        "run_length_encoding_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "saddle-points": {
+      "solution": [
+        "saddle_points.py"
+      ],
+      "test": [
+        "saddle_points_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "satellite": {
+      "solution": [
+        "satellite.py"
+      ],
+      "test": [
+        "satellite_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "say": {
+      "solution": [
+        "say.py"
+      ],
+      "test": [
+        "say_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "scale-generator": {
+      "solution": [
+        "scale_generator.py"
+      ],
+      "test": [
+        "scale_generator_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "scrabble-score": {
+      "solution": [
+        "scrabble_score.py"
+      ],
+      "test": [
+        "scrabble_score_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "secret-handshake": {
+      "solution": [
+        "secret_handshake.py"
+      ],
+      "test": [
+        "secret_handshake_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "series": {
+      "solution": [
+        "series.py"
+      ],
+      "test": [
+        "series_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "sgf-parsing": {
+      "solution": [
+        "sgf_parsing.py"
+      ],
+      "test": [
+        "sgf_parsing_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "sieve": {
+      "solution": [
+        "sieve.py"
+      ],
+      "test": [
+        "sieve_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "simple-cipher": {
+      "solution": [
+        "simple_cipher.py"
+      ],
+      "test": [
+        "simple_cipher_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "simple-linked-list": {
+      "solution": [
+        "simple_linked_list.py"
+      ],
+      "test": [
+        "simple_linked_list_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "space-age": {
+      "solution": [
+        "space_age.py"
+      ],
+      "test": [
+        "space_age_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "spiral-matrix": {
+      "solution": [
+        "spiral_matrix.py"
+      ],
+      "test": [
+        "spiral_matrix_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "square-root": {
+      "solution": [
+        "square_root.py"
+      ],
+      "test": [
+        "square_root_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "state-of-tic-tac-toe": {
+      "solution": [
+        "state_of_tic_tac_toe.py"
+      ],
+      "test": [
+        "state_of_tic_tac_toe_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "strain": {
+      "solution": [
+        "strain.py"
+      ],
+      "test": [
+        "strain_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "sublist": {
+      "solution": [
+        "sublist.py"
+      ],
+      "test": [
+        "sublist_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "sum-of-multiples": {
+      "solution": [
+        "sum_of_multiples.py"
+      ],
+      "test": [
+        "sum_of_multiples_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "swift-scheduling": {
+      "solution": [
+        "swift_scheduling.py"
+      ],
+      "test": [
+        "swift_scheduling_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "tournament": {
+      "solution": [
+        "tournament.py"
+      ],
+      "test": [
+        "tournament_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "transpose": {
+      "solution": [
+        "transpose.py"
+      ],
+      "test": [
+        "transpose_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "tree-building": {
+      "solution": [
+        "tree_building.py"
+      ],
+      "test": [
+        "tree_building_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "triangle": {
+      "solution": [
+        "triangle.py"
+      ],
+      "test": [
+        "triangle_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "trinary": {
+      "solution": [
+        "trinary.py"
+      ],
+      "test": [
+        "trinary_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "twelve-days": {
+      "solution": [
+        "twelve_days.py"
+      ],
+      "test": [
+        "twelve_days_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "two-bucket": {
+      "solution": [
+        "two_bucket.py"
+      ],
+      "test": [
+        "two_bucket_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "two-fer": {
+      "solution": [
+        "two_fer.py"
+      ],
+      "test": [
+        "two_fer_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "variable-length-quantity": {
+      "solution": [
+        "variable_length_quantity.py"
+      ],
+      "test": [
+        "variable_length_quantity_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "word-count": {
+      "solution": [
+        "word_count.py"
+      ],
+      "test": [
+        "word_count_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "word-search": {
+      "solution": [
+        "word_search.py"
+      ],
+      "test": [
+        "word_search_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "wordy": {
+      "solution": [
+        "wordy.py"
+      ],
+      "test": [
+        "wordy_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "yacht": {
+      "solution": [
+        "yacht.py"
+      ],
+      "test": [
+        "yacht_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "zebra-puzzle": {
+      "solution": [
+        "zebra_puzzle.py"
+      ],
+      "test": [
+        "zebra_puzzle_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    },
+    "zipper": {
+      "solution": [
+        "zipper.py"
+      ],
+      "test": [
+        "zipper_test.py"
+      ],
+      "example": [
+        ".meta/example.py"
+      ],
+      "editor": [],
+      "support": []
+    }
+  },
+  "image": {
+    "name": "ce-harness:py312",
+    "dockerfile": "experiments/harness/docker/Dockerfile"
+  }
 }
