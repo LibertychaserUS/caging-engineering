@@ -70,6 +70,7 @@ It publishes:
 - conceptual definitions;
 - initial system architecture;
 - an `.agent-template` directory for agentic task-space organization;
+- four theory documents under `docs/` (ontology; epistemology and method; open problems, objections and limits; related work) and a small machine-checked formal core under `formal/` (Lean 4 core, no external library);
 - open conceptual and implementation problems.
 
 It does **not** publish private product implementations, private evaluation datasets, proprietary workflows, or application-specific verifier rules.
@@ -79,31 +80,41 @@ It does **not** publish private product implementations, private evaluation data
 ```text
 caging-engineering/
   README.md
-  ROADMAP.md
-  CITATION.cff
-  LICENSE.md
+  LICENSE
   docs/
-    00_manifesto.md
-    01_core_definitions.md
-    02_caging_taxonomy.md
-    03_agentic_full_stack.md
-    04_memory_middleware.md
-    05_verifier_layer.md
-    06_model_db_and_operator_graph.md
-    07_research_trajectory.md
-    08_open_questions.md
-    09_implementation_issues.md
-    10_appendix_suggestions.md
-  figures/
-    architecture_ascii.md
-    operator_graph_ascii.md
-  .agent-template/
-    spec/
-    knowledge/
-    memory/
-    action/
-    verification/
-    audit/
+    ontology.md
+    epistemology-and-method.md
+    open-problems.md
+    related-work.md
+  formal/
+    CagingCore.lean
+  caging/caging-engineering/          v0.1.0 concept archive
+    README.md
+    ROADMAP.md
+    CITATION.cff
+    LICENSE.md
+    docs/
+      00_manifesto.md
+      01_core_definitions.md
+      02_caging_taxonomy.md
+      03_agentic_full_stack.md
+      04_memory_middleware.md
+      05_verifier_layer.md
+      06_model_db_and_operator_graph.md
+      07_research_trajectory.md
+      08_open_questions.md
+      09_implementation_issues.md
+      10_appendix_suggestions.md
+    figures/
+      architecture_ascii.md
+      operator_graph_ascii.md
+    .agent-template/
+      spec/
+      knowledge/
+      memory/
+      action/
+      verification/
+      audit/
 ```
 
 ## Suggested citation
