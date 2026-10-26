@@ -1,0 +1,55 @@
+{
+  "preregistration_commit": null,
+  "frozen_date": "2026-10-26",
+  "draw_seed": 20261026,
+  "sources": {
+    "exercism_python": {
+      "repo": "https://github.com/exercism/python",
+      "commit": "6105f6d9d3ef66ce3d5c8f529d2882af3d76b706",
+      "commit_date": "2026-09-30",
+      "path": "exercises/practice",
+      "exercise_count_at_pin": 142,
+      "license": "MIT"
+    },
+    "evalplus": {
+      "repo": "https://github.com/evalplus/evalplus",
+      "release": "v0.3.1",
+      "datasets": [
+        "HumanEval+ (164)",
+        "MBPP+ (378, sanitised)"
+      ]
+    },
+    "models": {
+      "agent_primary": {
+        "hf_id": "Qwen/Qwen2.5-Coder-14B-Instruct",
+        "revision": null
+      },
+      "agent_secondary": {
+        "hf_id": "Qwen/Qwen2.5-Coder-7B-Instruct",
+        "revision": null
+      },
+      "judge_primary": {
+        "hf_id": "meta-llama/Llama-3.1-8B-Instruct",
+        "revision": null
+      },
+      "judge_exploratory": {
+        "hf_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": null
+      }
+    }
+  },
+  "smoke_test_exercises": [
+    "hello-world",
+    "leap",
+    "two-fer",
+    "raindrops",
+    "bob"
+  ],
+  "exclusion_list": null,
+  "admitted_exercises": null,
+  "h3_subset_80": null,
+  "h3_subset_40": null,
+  "h4_orders": null,
+  "harness_failures": [],
+  "notes": "null fields are filled, before any agent run, by experiments/harness/make_manifest.py using draw_seed; each fill is a separate commit."
+}
