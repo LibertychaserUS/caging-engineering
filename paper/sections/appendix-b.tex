@@ -1,0 +1,43 @@
+\section{The action-cage ladder and the cage library}
+\label{app:ladder}
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lp{6.2cm}p{6.4cm}c@{}}
+\toprule
+Level & Added restriction & Action classes still allowed & Slack proxy \\
+\midrule
+\lv{0} & none & read anywhere, write anywhere, any shell & 5 \\
+\lv{1} & destructive-pattern list and network commands blocked & read anywhere, write anywhere, non-destructive shell & 4 \\
+\lv{2} & writes and deletes confined to the exercise directory & read anywhere, write in dir, non-destructive shell & 3 \\
+\lv{3} & visible test files read-only & read anywhere, write non-test in dir, non-destructive shell & 2 \\
+\lv{4} & shell restricted to the test command (\code{python -m pytest}) and \code{ls}/\code{cat} inside dir & read in dir, write non-test in dir, run tests & 1 \\
+\lv{5} & writes restricted to the stub solution module(s) & read in dir, write stub only, run tests & 0 \\
+\lv{6} & no shell: the agent cannot run tests & read in dir, write stub only & $-1$ \\
+\bottomrule
+\end{tabular}
+\caption{The action-cage ladder (independent variable of H1; \lv{3} is the baseline of H4). Each level is a superset of the restrictions of the previous one. The slack proxy counts allowed action classes beyond the two the reference solution needs (write the stub module, run the tests); $-1$ marks the removal of a needed class.}
+\label{tab:ladder}
+\end{table}
+
+\label{app:library}
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lp{7.6cm}cc@{}}
+\toprule
+Cage & Restriction & $G$ (singleton) & tests run (singleton) \\
+\midrule
+\kc{1} & writes only via the \code{write\_file} tool (no shell redirection or heredocs) & REACHABLE & REACHABLE \\
+\kc{2} & no \code{write\_file} tool; writes only via shell & REACHABLE & REACHABLE \\
+\kc{3} & tests only via \code{run\_tests} (shell \code{pytest} blocked) & REACHABLE & REACHABLE \\
+\kc{4} & no \code{run\_tests} tool; tests only via shell & REACHABLE & REACHABLE \\
+\kc{5} & at most 12 tool calls (modelled as a path bound of 12) & REACHABLE & REACHABLE \\
+\kc{6} & visible tests read-only and writes confined to the exercise directory (= \lv{3}) & REACHABLE & REACHABLE \\
+\midrule
+\multicolumn{4}{@{}p{0.97\textwidth}@{}}{\emph{Combinations UNREACHABLE for $G$ (5 of 41):} $\kc{1}\Cand\kc{2}$, $\kc{1}\Cand\kc{2}\Cand\kc{3}$, $\kc{1}\Cand\kc{2}\Cand\kc{4}$, $\kc{1}\Cand\kc{2}\Cand\kc{5}$, $\kc{1}\Cand\kc{2}\Cand\kc{6}$.} \\
+\multicolumn{4}{@{}p{0.97\textwidth}@{}}{\emph{Combinations UNREACHABLE for ``tests run at least once'' (5 of 41):} $\kc{3}\Cand\kc{4}$, $\kc{1}\Cand\kc{3}\Cand\kc{4}$, $\kc{2}\Cand\kc{3}\Cand\kc{4}$, $\kc{3}\Cand\kc{4}\Cand\kc{5}$, $\kc{3}\Cand\kc{4}\Cand\kc{6}$.} \\
+\bottomrule
+\end{tabular}
+\caption{The H3 cage library and the checker's verdicts on the twelve-state abstraction (\code{experiments/cagecheck/verdicts.json}, generated 2026-10-26 before any agent run). All 41 combinations (6 singletons, 15 pairs, 20 triples) were checked for both goal sets; every UNREACHABLE verdict carries a non-empty frontier, so the \kc{5} bound is in no case responsible on its own.}
+\label{tab:library}
+\end{table}

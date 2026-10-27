@@ -1,0 +1,23 @@
+\section{Verification techniques against the three requirements}
+\label{app:techniques}
+
+Table~\ref{tab:techniques} classifies techniques commonly grouped as ``verification'' by the three requirements of \S\ref{sec:requirements}. A technique counts as an adjudicator only when all three hold; a human reviewer counts only when the artefact itself, not the agent's account of it, is read.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}p{5.2cm}cccp{4.2cm}@{}}
+\toprule
+Technique & NP & Pr & Tr & Status \\
+\midrule
+Self-critique loop & no & no & rarely & search heuristic \\
+LM judge, free rubric & no & no & some & ranking \\
+LM judge, frozen rubric, sealed inputs & partly & yes & yes & ranks only \\
+Tests pinned outside the sandbox & yes & yes & logged$^*$ & adjudicator \\
+Type checker, schema, linter & yes & yes & logged$^*$ & adjudicator for its properties \\
+Proof-checker kernel & yes & yes & logged$^*$ & adjudicator \\
+Human review & partly & varies & varies & if the artefact is read \\
+\bottomrule
+\end{tabular}
+\caption{Common techniques against the three requirements: non-persuadable (NP), prior (Pr), traceable (Tr). $^*$Traceable if the verdict is logged.}
+\label{tab:techniques}
+\end{table}

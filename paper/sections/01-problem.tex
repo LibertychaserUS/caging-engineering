@@ -1,0 +1,13 @@
+\section{The problem: reliability as a property of the system}
+\label{sec:problem}
+
+Most current writing about agents treats the agent as a mind that is instructed. The engineering that follows revolves around how one speaks to it: prompts, system instructions, personas, few-shot examples. When the agent fails, the remedy is sought in the model.
+
+This paper changes the object of study. An agent is a motion through a state space. What is worth studying is not what it thinks but where it can go. Reliability, on this view, is a property of the space the system lets the policy walk, and the object of design is the reachable set.
+
+Three things change when the object of design is the reachable set rather than the prompt or the policy. First, prompts, tools, and models remain in the picture, but as derived notions: a tool is a family of edges added to the transition relation; a prompt is a prior over which available edges the agent tends to take; a model is the policy that chooses among available edges; a cage is a restriction on which edges exist at all, and only the cage is the subject of this framework. Second, safety and usefulness become two conditions on one object; a design that states only a safety condition has no way to notice that it has lost the goal. Third, confirmation that a goal has been reached acquires a structural answer: an adjudicator counts as one only if it cannot be addressed by the thing it judges, was fixed before the proposal existed, and leaves a record.
+
+This is not a claim that models do not reason, nor a claim about how a policy chooses among the edges it is given. It is a decision about what the engineering discipline should quantify over.
+
+\paragraph{What the paper does and does not claim.}
+The paper fixes an ontology and the two conditions a good cage must meet (\S\ref{sec:ontology}, \S\ref{sec:conditions}); derives a method and two irreducible human positions from three requirements on the adjudicator (\S\ref{sec:method}); presents four preregistered tests with frozen thresholds and reports the parts already established (\S\ref{sec:experiments}); and places the framework among its lineages (\S\ref{sec:related}). It does not claim that any deployed system enforces a closure-level restriction exactly, that there is a canonical measure of tightness, that any adjudicator is correct, that the formal model is faithful to a particular runtime, or safety in the open world (\S\ref{sec:boundaries}); the repository's table of claims and non-claims is binding on everything said here.

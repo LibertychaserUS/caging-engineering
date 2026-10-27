@@ -1,0 +1,15 @@
+% The three-state counterexample of formal/CagingCore.lean.
+\begin{tikzpicture}[
+    >={Stealth[length=2mm]},
+    state/.style={circle,draw,minimum size=7mm,inner sep=1pt,font=\small},
+    lab/.style={font=\footnotesize},
+    node distance=12mm and 18mm]
+  \node[state] (a) {$a$};
+  \node[state, right=of a] (g) {$g$};
+  \node[state, below right=7mm and 9mm of a] (b) {$b$};
+  \draw[->, thick] (a) -- node[lab, above] {$C_1$} (g);
+  \draw[->, thick, dashed] (a) -- node[lab, below left] {$C_2$} (b);
+  \draw[->, thick, dashed] (b) -- node[lab, below right] {$C_2$} (g);
+  \node[lab, below=1mm of a] {$s_0$};
+  \node[lab, below=1mm of g] {$G$};
+\end{tikzpicture}

@@ -1,0 +1,66 @@
+\section{Ontology}
+\label{sec:ontology}
+
+Once the object of study is the reachable space, the world contains three kinds of thing.
+
+\paragraph{State.}
+A state $s$ in a set $S$ is everything the task outcome depends on and that the system can in principle observe: the file tree, the memory stores at every level, the permission set held, and the observable part of the external world. What is admitted into the state is a modelling decision, left open and expected to be task-dependent. A transition system consists of a step relation $\mathrm{step} \subseteq S \times S$ and an initial state $s_0$.
+
+\paragraph{Cage.}
+A cage $C$ is not a prohibition on actions. It is a restriction on the transition relation: a predicate on pairs of states that says which edges $s \to s'$ exist. The reachable region $\RC$ under it is the closure of the initial state under the surviving edges: the least set that contains $s_0$ and is closed under $\{\, s \to s' : \mathrm{step}(s,s') \wedge C(s,s') \,\}$. Two cages compose by conjunction, $(C_1 \Cand C_2)(s,s') = C_1(s,s') \wedge C_2(s,s')$, which keeps only the edges both allow. A cage $C_1$ is tighter than $C_2$, written $C_1 \Cle C_2$, when $C_1$ allows no edge that $C_2$ forbids.
+
+\paragraph{Adjudicator.}
+An adjudicator $V$ decides whether a state lies in the goal region $G \subseteq S$ or in the unsafe region $U \subseteq S$. Its single defining property is that it sits outside the agent's writable space. An adjudicator the agent can edit is not an adjudicator; it is part of the proposal. The project's earlier taxonomy reads back onto these objects: the Specification Cage fixes $G$, the Action, Knowledge, and Memory Cages restrict components of the transition relation, the Verification Cage is $V$, and the Meta-Cage is the rule that edges modifying $C$ or $V$ lie in $U$. A cage is a region of the transition relation, not a wall around the agent: the boundary is drawn first, and the agent's freedom is what remains inside.
+
+\subsection{The level at which a cage acts}
+\label{sec:level}
+
+The decisive difference between a cage and a guardrail is the level at which each acts. A guardrail acts at the action level: it is a predicate on individual actions or outputs (this command is forbidden; this string may not appear; this file may not be opened). A cage acts at the reachability level: it is a restriction on the transition relation and therefore on the closure $\RC$.
+
+The difference shows up under composition. An action-level prohibition can be routed around: the forbidden effect is produced by a sequence of permitted actions (do not delete the tests; so empty them, skip them, or edit the helper that reports them). A reachability-level restriction has no such gap by construction: a bypass is a reachable path to a state in $U$, and a cage is precisely a statement that no such path exists. This is a definitional distinction, not an implementation claim: any running system enforces its cage through finitely many checks on some abstraction of the state, and the gap between abstraction and system is where bypasses live (\S\ref{sec:boundaries}). A guardrail is about actions; a cage is about the closure.
+
+\subsection{Reports, not ground truth}
+\label{sec:reports}
+
+The adjudicator does not see the world. It sees reports: the exit code of a test runner, a directory listing, a log line, a hash. So does the agent; no layer of the system sees ground truth. If no single layer can be trusted to be correct, authority cannot come from any layer's correctness; it can come only from the relations between layers being tamper-evident: an append-only ledger whose hash is held elsewhere, a verdict signed by a key the proposer does not hold, a test suite whose checksum is pinned outside the sandbox. Adjudication is therefore layered, and the audit log is itself an object that must be auditable. Verifier integrity is required not because tampering is likely but because without tamper-evidence between layers there is nothing that authority could attach to. The same applies to enforcement: a cage that allows or blocks an edge by inspecting a path string is reasoning about a report of the file system, not the file system.
+
+\subsection{The formal core}
+\label{sec:lean}
+
+The definitions above are stated in Lean~4 using the core language only, with no external library, so that the whole development is checked by one invocation of the compiler (Listing~\ref{lst:core}).
+
+\begin{lstlisting}[caption={Definitions in \code{formal/CagingCore.lean}.},label={lst:core},float=t]
+structure TS (S : Type u) where
+  step : S (*@$\to$@*) S (*@$\to$@*) Prop
+  s0   : S
+
+def Cage (S : Type u) := S (*@$\to$@*) S (*@$\to$@*) Prop
+
+def Cage.and (C(*@$_1$@*) C(*@$_2$@*) : Cage S) : Cage S :=
+  fun s s' => C(*@$_1$@*) s s' (*@$\wedge$@*) C(*@$_2$@*) s s'
+
+def Cage.le (C(*@$_1$@*) C(*@$_2$@*) : Cage S) : Prop :=
+  (*@$\forall$@*) s s', C(*@$_1$@*) s s' (*@$\to$@*) C(*@$_2$@*) s s'
+
+inductive Reach (ts : TS S) (C : Cage S) : S (*@$\to$@*) Prop
+  | base : Reach ts C ts.s0
+  | step {s s' : S} : Reach ts C s (*@$\to$@*) ts.step s s'
+      (*@$\to$@*) C s s' (*@$\to$@*) Reach ts C s'
+
+def GoalReachable (ts : TS S) (C : Cage S)
+    (G : S (*@$\to$@*) Prop) : Prop :=
+  (*@$\exists$@*) s, Reach ts C s (*@$\wedge$@*) G s
+
+def UnsafeUnreachable (ts : TS S) (C : Cage S)
+    (U : S (*@$\to$@*) Prop) : Prop :=
+  (*@$\forall$@*) s, Reach ts C s (*@$\to$@*) (*@$\neg$@*) U s
+\end{lstlisting}
+
+Six facts are machine-checked against these definitions; the paper's absolute language is confined to them. \code{reach\_mono}: if $C_1 \Cle C_2$ then every state reachable under $C_1$ is reachable under $C_2$. \code{reach\_and\_sub}: every state reachable under $C_1 \Cand C_2$ is reachable under $C_1$ and under $C_2$. \code{safe\_and\_of\_left}: if $U$ is unreachable under $C_1$ it is unreachable under $C_1 \Cand C_2$. \code{safe\_of\_le}: if $C_1 \Cle C_2$ and $U$ is unreachable under $C_2$, it is unreachable under $C_1$. \code{goal\_of\_le}: if $C_1 \Cle C_2$ and $G$ is reachable under $C_1$, it is reachable under $C_2$. \code{and\_not\_reaches}: on the three-state system of Figure~\ref{fig:three}, each of $C_1$ and $C_2$ reaches the goal and their conjunction does not. What is checked is the abstract model; that a particular runtime realises a given cage is a refinement claim and is open (\S\ref{sec:boundaries}).
+
+\begin{figure}[t]
+\centering
+\input{figures/three-state}
+\caption{The checked counterexample: start $a$, goal $g$. $C_1$ keeps only $a\to g$ (solid); $C_2$ only $a\to b\to g$ (dashed). Under $C_1 \Cand C_2$ no edge survives (\code{and\_reach\_only\_start}).}
+\label{fig:three}
+\end{figure}

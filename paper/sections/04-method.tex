@@ -1,0 +1,33 @@
+\section{Method: the authority of an adjudicator}
+\label{sec:method}
+
+What does it mean, inside such a system, to know that a goal has been reached? The compressed answer is: to have been confirmed by something that cannot talk back. The property of the external thing that makes its feedback count as confirmation is not accuracy and not statistical independence; it is three structural requirements.
+
+\subsection{Three requirements}
+\label{sec:requirements}
+
+\paragraph{Non-persuadability.}
+The adjudicator has no natural-language interface. A proof checker's kernel, a continuous-integration gate, a sealed data label, an append-only ledger: there is no way to explain anything to them; they accept an object and return a verdict determined by the object alone. The reason this matters is logical. An adjudicator that can be persuaded is one whose verdict depends on the proposer's description of the proposal; its verdict is then a function of the proposer's output, which makes it, formally, a component of the proposer. Verification by a persuadable adjudicator is self-report with an extra step. A corollary runs against current practice: a language model used as a judge is a proposer-side instrument unless its criterion is frozen in advance and its inputs are sealed from the proposer's commentary. Under those conditions it can rank candidates; it cannot adjudicate, because the thing it is judging can address it.
+
+\paragraph{Priority.}
+The criterion is fixed, and frozen, before the proposal exists. A criterion settled after the result is visible is not a test of the result but a description of it; this is the requirement that preregistration imposes on empirical studies and falsifiability on hypotheses. Inside a caged system it has a concrete form: the success predicate, the test suite, the schema, and the acceptance thresholds are committed to an append-only store before the agent begins, and the Meta-Cage makes the edges that would modify them unreachable. A specification the agent can still edit is not prior; it is a draft.
+
+\paragraph{Traceability.}
+Every verdict is written to a place from which it cannot be removed. The reason is not accountability. For most real tasks the unsafe region $U$ is known only empirically, and every negative verdict is one more observed point in $U$. A system that discards its failures is discarding its only map of the region it is supposed to keep the agent out of. Traceability lets the estimate of $U$ accumulate across tasks, and it makes a retained index of failed paths an epistemic object rather than a convenience.
+
+Table~\ref{tab:techniques} (Appendix~\ref{app:techniques}) classifies common verification techniques by the three requirements; a human who approves on the basis of the agent's summary has been addressed by the proposer, and the approval inherits the problem.
+
+
+\subsection{The pipeline}
+\label{sec:pipeline}
+
+From the ontology and the three requirements a method follows. It is an order in which things bind rather than a set of components. (1)~\emph{Specify}: turn the ill-defined task into a well-defined one (goal, success predicate, constraints, stop condition). (2)~\emph{Freeze}: write down the criteria and thresholds for $G$ and $U$ and commit them somewhere the agent cannot reach (priority). (3)~\emph{Construct}: build $C$ such that $\RC$ meets $G$ and misses $U$; if this cannot be done, the task is not yet caged, so return to step 1 or invoke the expansion protocol. (4)~\emph{Run}: let the policy walk the surviving edges. (5)~\emph{Adjudicate}: $V$, outside the writable space, returns a verdict (non-persuadability). (6)~\emph{Record}: the verdict, positive or negative, enters the append-only store (traceability). (7)~\emph{Converge}: on success, prune, keeping the accepted path, compressing the failed ones, archiving the dormant ones. (8)~\emph{Protect}: any change to $C$, $V$, or the frozen criteria originates outside the cage (Meta-Cage).
+
+Step 3 can fail. When no cage satisfies both conditions, the correct output is not a looser cage chosen silently but a report: which boundary blocks the goal, what the minimal expansion would be, and what it would newly make reachable. Step 8 is not a step the agent performs; it constrains who may maintain the other steps.
+
+\subsection{The closure gap and the human positions}
+\label{sec:closure}
+
+A cage cannot establish its own completeness by means available inside it. Whatever checks the cage can run on itself are edges in its own transition relation, and whether those edges suffice is exactly the question at issue. The structure resembles the one from logic in which a system strong enough to describe its own rules cannot certify from inside that they are enough; this is an analogy, not a theorem about agents, and the conclusion does not depend on it. The authority to modify the cage must come from outside it: a human, or a kernel that is itself outside the agent's writable space and whose rules a human has read. This gives a theoretical position to a practice usually defended as mere process: a human merges, not from habit or distrust, but because this is the one gap in the system's closure that cannot be filled from within.
+
+Two human positions follow. The one who changes the cage: modifications to $C$, $V$, and the frozen criteria originate outside; this is a role, not a quantity of work, and it may be rare. The one who reads the specification: because priority requires the criterion to be fixed before the proposal, and because an adjudicator cannot check its own criterion (\S\ref{sec:boundaries}), someone who is not the proposer must have read the specification and judged that it says what was meant. Everything else in the pipeline can in principle be delegated. These two cannot, not because of present model limitations but because of where they sit relative to the cage's boundary; they are held only by someone who looks at the thing itself rather than at the agent's account of it.

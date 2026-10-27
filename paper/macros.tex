@@ -1,0 +1,53 @@
+% Symbols are defined once here and used everywhere.
+\newcommand{\Reach}{\mathcal{R}}
+\newcommand{\RC}{\Reach_{C}(s_0)}
+\newcommand{\Umodel}{U_{\mathrm{model}}}
+\newcommand{\Ngoal}{N(G)}
+\newcommand{\Cand}{\wedge}
+\newcommand{\Cle}{\sqsubseteq}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\lv}[1]{L#1}
+\newcommand{\kc}[1]{K#1}
+
+% Results placeholder: boxed grey, hard to miss.
+\newcommand{\results}[2]{%
+  \par\smallskip\noindent
+  \fcolorbox{black!50}{black!10}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+      \footnotesize\textbf{Result for #1: #2.}\ Result pending: preregistered; see \code{experiments/PREREGISTRATION.md}.}}%
+  \par\smallskip}
+
+% Quoted decision rules from the frozen preregistration.
+\newenvironment{prereg}%
+  {\par\smallskip\begin{list}{}{\setlength{\leftmargin}{1em}\setlength{\rightmargin}{0pt}\setlength{\topsep}{0pt}\setlength{\parsep}{2pt}\setlength{\itemsep}{0pt}}\item[]\footnotesize}%
+  {\end{list}\par\smallskip}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+% Lean listings
+\lstdefinelanguage{Lean}{
+  morekeywords={structure,where,def,inductive,theorem,namespace,end,universe,variable,fun,by,intro,induction,with,exact,open,deriving,match},
+  sensitive=true,
+  morecomment=[l]{--},
+  morecomment=[s]{/-}{-/},
+  morestring=[b]",
+  literate={→}{{$\rightarrow$}}1 {∧}{{$\wedge$}}1 {∃}{{$\exists$}}1 {¬}{{$\neg$}}1
+           {₀}{{$_0$}}1 {₁}{{$_1$}}1 {₂}{{$_2$}}1,
+}
+\lstset{
+  language=Lean,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape\color{black!60},
+  columns=fullflexible,
+  keepspaces=true,
+  breaklines=true,
+  escapeinside={(*@}{@*)},
+  frame=single,
+  framerule=0.3pt,
+  xleftmargin=2pt, xrightmargin=2pt,
+  aboveskip=4pt, belowskip=4pt,
+}

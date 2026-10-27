@@ -1,0 +1,40 @@
+\section{Two conditions and tightness}
+\label{sec:conditions}
+
+The core principle has two parts that are logically independent:
+\begin{align}
+\text{goal reachability:} \quad & \RC \cap G \neq \emptyset, \label{eq:goal}\\
+\text{unsafe non-reachability:} \quad & \RC \cap U = \emptyset. \label{eq:safe}
+\end{align}
+The first is liveness-like; the second is a safety condition. A cage is \emph{good} when both hold.
+
+The two behave differently under the operations a designer performs. Tightening a cage (removing edges) preserves safety and does not restore reachability (\code{safe\_of\_le}, \code{reach\_mono}). Loosening preserves goal reachability and does not restore safety (\code{goal\_of\_le}). Composing two cages preserves safety if either component was safe (\code{safe\_and\_of\_left}), and may destroy goal reachability even when both components reached the goal (\code{and\_not\_reaches}). These facts explain a failure mode that practitioners recognise. A system built from safety alone drifts toward blocking $G$: every added guardrail shrinks the reachable region, nothing enlarges it, and after enough additions the agent is safe and useless. A framework that states both conditions has a quantity that a safety-only framework cannot define.
+
+\subsection{Slack and tightness}
+\label{sec:slack}
+
+Let $\Ngoal$ be the set of states lying on at least one surviving path from $s_0$ into $G$. The \emph{slack} of a cage is what the reachable region contains beyond that,
+\begin{equation}
+\mathrm{slack}(C) = \RC \setminus \Ngoal .
+\label{eq:slack}
+\end{equation}
+A cage with zero slack admits only states that lie on a route to the goal. \emph{Tightness} is any monotone measure of how small the slack is; no canonical measure is claimed. Tightness is not to be maximised. Zero slack means there is no exploration: the goal path must already be known when the cage is written, the one situation in which an agent is unnecessary. Slack is the resource that search consumes. What tightness does is put safety and usefulness on one scale. The space of good cages is an interval: any cage at least as loose as some single route to $G$ and at least as tight as the complement of $U$. The design question is how much slack a task needs and when; for exploratory tasks the answer changes over the task (\S\ref{sec:boundaries}).
+
+\subsection{The action-cage ladder and the slack proxy}
+\label{sec:ladder}
+
+The experiments of \S\ref{sec:experiments} use one concrete family of cages, fixed in the preregistration. The task is an agentic coding episode: the agent sits in a container holding an exercise's instructions, a stub solution module, and a visible test file, and has five tools (\code{read\_file}, \code{write\_file}, \code{list\_dir}, \code{run\_shell}, \code{run\_tests}). Every tool call is classified into one of twelve action classes and passes through a cage layer that returns allow or block. Seven conditions \lv{0}--\lv{6} form a ladder, each a superset of the restrictions of the previous one, from no restriction (\lv{0}) through confinement of writes, read-only tests, and a restricted shell, to no shell at all (\lv{6}); Table~\ref{tab:ladder} in Appendix~\ref{app:ladder} gives the levels.
+
+The reference solution needs exactly two action classes: write the stub module and run the tests. The \emph{slack proxy} of a level is the number of allowed action classes beyond these two: $5, 4, 3, 2, 1, 0$ for \lv{0}--\lv{5}, and $-1$ for \lv{6} by convention, since a needed class has been removed. Tightness increases with level. The proxy is a count on the action-class abstraction, not a measurement of Equation~\eqref{eq:slack} on the real system; it is the concrete instance the experiments vary.
+
+\subsection{Composition}
+\label{sec:composition}
+
+Composition shrinks reachability: $\Reach_{C_1 \Cand C_2}(s_0) \subseteq \Reach_{C_1}(s_0) \cap \Reach_{C_2}(s_0)$, and the inclusion is in general strict, since a state can be reachable under each cage by different routes and under neither once both cages apply at every step. Safety survives composition; goal reachability does not (Figure~\ref{fig:three}). The asymmetry is the whole story of guardrail accretion: safety properties are closed under adding restrictions, liveness-like properties are not, and a designer who adds cages one at a time, each checked for safety, is performing an operation that can only lose the goal and is not told so by any of the individual checks.
+
+\begin{proposition}[cage consistency check]
+\label{prop:check}
+Given a finite abstraction of the task space, a goal predicate, and a set of cages, the question whether $G$ is still reachable under their conjunction is a graph reachability problem on the abstraction and is therefore decidable in time linear in the abstraction's size. A caged runtime should run this check whenever a cage is added or tightened, and should refuse the change, or invoke the expansion protocol of \S\ref{sec:pipeline}, when the answer is no.
+\end{proposition}
+
+The proposition is about the abstraction. Whether its verdicts predict what a policy does on the real task is an empirical question and is the subject of hypothesis H3 (\S\ref{sec:h3}). Composition through shared state, where one cage's enforcement writes memory that another cage reads, is not covered by conjunction and is left open.
